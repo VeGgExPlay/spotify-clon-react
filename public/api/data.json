@@ -1,57 +1,57 @@
 [
   {
     "id": "1",
-    "title": "Luminous Skies",
-    "artist": "Aurora Drive",
-    "album": "Starlight Echoes",
+    "title": "Cold",
+    "artist": "NEFFEX",
+    "album": "Neffex",
     "year": 2021,
-    "genre": "Synthwave",
-    "duration": "3:42",
-    "cover": "https://images.unsplash.com/photo-1605902711622-cfb43c4437ae?fit=crop&w=400&h=400",
-    "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    "genre": "HipHop/Rap",
+    "duration": "3:06",
+    "cover": "https://i.ytimg.com/vi/WzQBAc8i73E/maxresdefault.jpg",
+    "audioUrl": "/music/01/1.mp3"
   },
   {
     "id": "2",
-    "title": "Desert Whispers",
-    "artist": "Echo Nomad",
-    "album": "Sand & Silence",
+    "title": "Careless",
+    "artist": "NEFFEX",
+    "album": "Neffex",
     "year": 2019,
-    "genre": "Ambient",
-    "duration": "4:15",
-    "cover": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?fit=crop&w=400&h=400",
-    "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+    "genre": "HipHop/Rap",
+    "duration": "4:56",
+    "cover": "https://i.ytimg.com/vi/Z6L4u2i97Rw/maxresdefault.jpg",
+    "audioUrl": "/music/01/2.mp3"
   },
   {
     "id": "3",
-    "title": "Neon City",
-    "artist": "Midnight Pulse",
-    "album": "Urban Glow",
+    "title": "Rumors",
+    "artist": "NEFFEX",
+    "album": "Neffex",
     "year": 2022,
-    "genre": "Electronic",
-    "duration": "3:58",
-    "cover": "https://images.unsplash.com/photo-1505682634904-d7c9d1f0f61c?fit=crop&w=400&h=400",
-    "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+    "genre": "HipHop/Rap",
+    "duration": "4:07",
+    "cover": "https://i.ytimg.com/vi/NlPvGIZgivQ/maxresdefault.jpg",
+    "audioUrl": "/music/01/3.mp3"
   },
   {
     "id": "4",
-    "title": "Rainy Days",
-    "artist": "Lo-Fi Clouds",
-    "album": "Chill & Study",
+    "title": "Best Of Me",
+    "artist": "NEFFEX",
+    "album": "Neffex",
     "year": 2020,
-    "genre": "Lo-Fi",
-    "duration": "2:54",
-    "cover": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?fit=crop&w=400&h=400",
-    "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+    "genre": "HipHop/Rap",
+    "duration": "3:47",
+    "cover": "https://i.ytimg.com/vi/A4LiP8WFuG0/maxresdefault.jpg",
+    "audioUrl": "/music/01/4.mp3"
   },
   {
     "id": "5",
-    "title": "Crimson Horizon",
-    "artist": "Skybound",
-    "album": "Horizons",
+    "title": "Back One Day",
+    "artist": "NEFFEX & TheFatRat",
+    "album": "Neffex",
     "year": 2023,
-    "genre": "Rock",
-    "duration": "4:23",
-    "cover": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?fit=crop&w=400&h=400",
-    "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+    "genre": "HipHop/Rap",
+    "duration": "3:54",
+    "cover": "https://i.ytimg.com/vi/3_3PFGIfqPg/maxresdefault.jpg",
+    "audioUrl": "/music/01/5.mp3"
   }
 ]

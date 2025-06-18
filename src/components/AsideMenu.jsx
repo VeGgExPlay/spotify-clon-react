@@ -10,6 +10,7 @@ import {
 } from "../icons/Library";
 
 import { useFetch } from "../hooks/useFetch";
+import { SideMenuCard } from "./SideMenuCard";
 
 export function AsideMenu() {
   const songs = useFetch();
@@ -27,7 +28,7 @@ export function AsideMenu() {
           <div className="flex gap-2">
             <button className="flex bg-[#333333] py-1 px-3 rounded-full gap-2 items-center">
               <Plus />
-              <span>Crear</span>
+              <span className="">Crear</span>
             </button>
             <button className="cursor-pointer transition-colors duration-300 hover:bg-[#333333] p-2 rounded-full gap-2 items-center">
               <FullScreen />
@@ -35,8 +36,12 @@ export function AsideMenu() {
           </div>
         </div>
         <ul className="flex gap-2">
-          <li className="bg-[#333333] py-1 px-3 rounded-full">Listas</li>
-          <li className="bg-[#333333] py-1 px-3 rounded-full">Artistas</li>
+          <li className="bg-[#333333] px-3 rounded-full flex items-center justify-center leading-none h-8">
+            <span>Listas</span>
+          </li>
+          <li className="bg-[#333333] px-3 rounded-full flex items-center justify-center leading-none h-8">
+            <span>Artistas</span>
+          </li>
         </ul>
       </section>
       <section className="flex flex-col gap-5">
@@ -49,53 +54,17 @@ export function AsideMenu() {
             <Sandwich />
           </button>
         </header>
-        <article className="flex group cursor-pointer items-center relative">
-          <div className="absolute group-hover:bg-[#424242] opacity-25 rounded-lg w-full scale-x-105 scale-y-115 h-full z-10" />
-          <div className="flex gap-2 items-center">
-            <div className="flex relative items-center justify-center object-contain rounded-md overflow-hidden h-14 w-14">
-              <div className="absolute opacity-0 group-hover:opacity-100">
-                <Play></Play>
-              </div>
-              <img
-                src="https://misc.scdn.co/liked-songs/liked-songs-64.png"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col z-20">
-              <p>Canciones que te gustan</p>
-              <span className="flex gap-2 items-center text-sm opacity-50">
-                <p>
-                  <Pin />
-                </p>
-                <p>Lista - 1 canción</p>
-              </span>
-            </div>
-          </div>
-        </article>
+        <SideMenuCard
+          isPlayList={true}
+          cover={"https://misc.scdn.co/liked-songs/liked-songs-64.png"}
+          title={"Canciones que te gustan"}
+          description={"Lista - 1 canción"}
+        />
         {songs?.map((song) => (
-          <article
+          <SideMenuCard
             key={song.id}
-            className="flex group cursor-pointer items-center relative"
-          >
-            <div className="absolute group-hover:bg-[#424242] opacity-25 rounded-lg w-full scale-x-105 scale-y-120 h-full z-10" />
-            <div className="flex gap-2 items-center">
-              <div className="flex relative items-center justify-center object-contain rounded-md overflow-hidden h-14 w-14">
-                <div className="absolute opacity-0 group-hover:opacity-100">
-                  <Play></Play>
-                </div>
-                <img
-                  src={song.cover}
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col z-20">
-                <p>{song.title}</p>
-                <span className="flex gap-2 items-center text-sm opacity-50">
-                  <p>{song.artist}</p>
-                </span>
-              </div>
-            </div>
-          </article>
+            song={song}
+          />
         ))}
       </section>
     </div>

@@ -7,12 +7,31 @@ import {
   Prev,
   Queue,
   Repeat,
+  Resume,
   Shuffle,
   Volume,
 } from "../icons/Library";
 
+import { useState } from "react";
+
+import { useMusic } from "../context/MusicContext";
+
 export function PlayingBar() {
-  return (
+  const {pauseSong, resumeSong} = useMusic()
+  const [isPaused, setIsPaused] = useState(false)
+
+  const playPauseIcon = isPaused ? <Resume /> : <Pause />
+
+  const handleClick = () => {
+    setIsPaused(!isPaused)
+    if(isPaused){
+      resumeSong()
+    } else {
+      pauseSong()
+    }
+  }
+
+   return (
     <div className="flex p-2 gap-2 w-full h-full items-center justify-between">
       <section className="flex flex-1"></section>
       <section className="flex flex-1 flex-col max-w[722px] w-1/3 items-center">
@@ -28,9 +47,9 @@ export function PlayingBar() {
                 <Prev />
               </span>
             </button>
-            <button className="bg-white rounded-full p-2">
+            <button onClick={handleClick} className="bg-white rounded-full p-2 cursor-pointer">
               <span>
-                <Pause />
+                {playPauseIcon}
               </span>
             </button>
             <button>

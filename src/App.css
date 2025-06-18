@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
-body{
-    color: white;
-    background: #000000;
+@font-face {
+  font-family: "CircularStd";
+  src: url("/fonts/circular-std-medium-500.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-#app{
-    display: grid;
-    grid-template-areas: 
+body {
+  font-family: "CircularStd", system-ui, sans-serif;
+  line-height: 1; /* elimina espacio vertical adicional */
+  color: white;
+  background: #000000;
+}
+
+html {
+  font-family: "CircularStd", system-ui, sans-serif;
+}
+
+#app {
+  display: grid;
+  grid-template-areas:
     "navbar navbar navbar"
     "aside main main"
     "player player player";
 
-    grid-template-columns: 350px 1fr;
-    grid-template-rows: 50px 1fr auto;
+  grid-template-columns: 350px 1fr;
+  grid-template-rows: 50px 1fr auto;
 }
