@@ -8,7 +8,7 @@
     "genre": "HipHop/Rap",
     "duration": "3:06",
     "cover": "https://i.ytimg.com/vi/WzQBAc8i73E/maxresdefault.jpg",
-    "audioUrl": "/music/01/1.mp3"
+    "audioUrl": "/music/01/1.m4a"
   },
   {
     "id": "2",
@@ -19,7 +19,7 @@
     "genre": "HipHop/Rap",
     "duration": "4:56",
     "cover": "https://i.ytimg.com/vi/Z6L4u2i97Rw/maxresdefault.jpg",
-    "audioUrl": "/music/01/2.mp3"
+    "audioUrl": "/music/01/2.m4a"
   },
   {
     "id": "3",
@@ -30,7 +30,7 @@
     "genre": "HipHop/Rap",
     "duration": "4:07",
     "cover": "https://i.ytimg.com/vi/NlPvGIZgivQ/maxresdefault.jpg",
-    "audioUrl": "/music/01/3.mp3"
+    "audioUrl": "/music/01/3.m4a"
   },
   {
     "id": "4",
@@ -41,7 +41,7 @@
     "genre": "HipHop/Rap",
     "duration": "3:47",
     "cover": "https://i.ytimg.com/vi/A4LiP8WFuG0/maxresdefault.jpg",
-    "audioUrl": "/music/01/4.mp3"
+    "audioUrl": "/music/01/4.m4a"
   },
   {
     "id": "5",
@@ -52,6 +52,6 @@
     "genre": "HipHop/Rap",
     "duration": "3:54",
     "cover": "https://i.ytimg.com/vi/3_3PFGIfqPg/maxresdefault.jpg",
-    "audioUrl": "/music/01/5.mp3"
+    "audioUrl": "/music/01/5.m4a"
   }
 ]
