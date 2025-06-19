@@ -17,10 +17,10 @@ export function NavBar() {
             <div className="flex h-full p-3">
               <Magnifyer />
             </div>
-            <div className="w-full h-full">
+            <div className="flex w-full h-full">
               <input
                 type="text"
-                className="h-full text-xl w-90 appearance-none bg-transparent border-none outline-none focus:outline-none"
+                className="flex h-full text-xl w-90 appearance-none bg-transparent border-none outline-none focus:outline-none"
                 placeholder="¿Qué quieres reproducir?"
               />
             </div>
