@@ -8,7 +8,7 @@ export function MainContent() {
 
   // Agrupar canciones por artista
   // 1.- usamos el reduce para convertir la lista de songs en un nuevo objeto, 
-  // donde acc es el acumulador y song es cada canción del array recorrido
+  // donde recibe acc que es el acumulador y song que es cada canción del array recorrido
   // 2.- Verificar si song.artist es un array "[NEFFEX, THEFATRAT]" o un string "NEFFEX" con el Array.isArray,
   // en el caso de que sea un string, lo convertimos a un array para poder recorrerlo después
   // 3.- Recorremos el array de artistas por si la canción tiene más de uno con el artist.forEach
@@ -18,15 +18,15 @@ export function MainContent() {
   // 6.- Y terminar el "reduce" con el "return acc", devolviendo el nuevo objeto con todos los artistas,
   // agrupados. El segundo argumento de reduce "{}" indica que acc empezará como un objeto vacío
   const groupedByArtist = songs.reduce((acc, song) => {
-    const artists = Array.isArray(song.artist) ? song.artist : [song.artist];
+    const artists = Array.isArray(song.artist) ? song.artist : [song.artist]
 
-    artists.forEach((artist) => {
-      if (!acc[artist]) acc[artist] = [];
-      acc[artist].push(song);
-    });
+    artists.forEach(artist => {
+        if(!acc[artist]) acc[artist] = []
+        acc[artist].push(song)
+    })
 
-    return acc;
-  }, {});
+    return acc
+  }, {})
 
   return (
     <div className="flex flex-col flex-1 h-max p-8 gap-4">

@@ -12,7 +12,7 @@ export function SideMenuCard({ song, cover, title, description, isPlayList }) {
 
   if (isPlayList || !song)
     return (
-      <article className="flex group cursor-pointer items-center relative">
+      <article className="flex flex-1 group cursor-pointer items-center relative">
         <div className="absolute group-hover:bg-[#424242] opacity-25 rounded-lg w-full scale-x-105 scale-y-115 h-full z-10" />
         <div className="flex gap-2 items-center">
           <picture className="flex relative items-center justify-center object-contain rounded-md overflow-hidden h-14 w-14">
@@ -37,7 +37,7 @@ export function SideMenuCard({ song, cover, title, description, isPlayList }) {
   return (
     <button
       onClick={handleClick}
-      className="flex text-start group cursor-pointer items-center relative"
+      className="flex flex-1 text-start group cursor-pointer items-center relative"
     >
       <div className="absolute group-hover:bg-[#424242] opacity-25 rounded-lg w-full scale-x-105 scale-y-120 h-full z-10" />
       <div className="flex gap-2 items-center">
@@ -63,7 +63,7 @@ export function SideMenuCard({ song, cover, title, description, isPlayList }) {
         <div className="flex flex-col z-20 gap-1">
           <p>{song.title}</p>
           <span className="flex gap-2 items-center text-sm opacity-50">
-            <p>{song.artist}</p>
+            <p>{Array.isArray(song.artist) ? song.artist.join(" & ") : song.artist}</p>
           </span>
         </div>
       </div>
