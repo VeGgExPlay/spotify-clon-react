@@ -8,7 +8,7 @@
     "genre": "HipHop/Rap",
     "duration": "3:06",
     "cover": "https://i.ytimg.com/vi/WzQBAc8i73E/maxresdefault.jpg",
-    "audioUrl": "/music/01/1.m4a"
+    "audioUrl": "/music/neffex/cold.m4a"
   },
   {
     "id": "2",
@@ -19,7 +19,7 @@
     "genre": "HipHop/Rap",
     "duration": "4:56",
     "cover": "https://i.ytimg.com/vi/Z6L4u2i97Rw/maxresdefault.jpg",
-    "audioUrl": "/music/01/2.m4a"
+    "audioUrl": "/music/neffex/careless.m4a"
   },
   {
     "id": "3",
@@ -30,7 +30,7 @@
     "genre": "HipHop/Rap",
     "duration": "4:07",
     "cover": "https://i.ytimg.com/vi/NlPvGIZgivQ/maxresdefault.jpg",
-    "audioUrl": "/music/01/3.m4a"
+    "audioUrl": "/music/neffex/rumors.m4a"
   },
   {
     "id": "4",
@@ -41,17 +41,74 @@
     "genre": "HipHop/Rap",
     "duration": "3:47",
     "cover": "https://i.ytimg.com/vi/A4LiP8WFuG0/maxresdefault.jpg",
-    "audioUrl": "/music/01/4.m4a"
+    "audioUrl": "/music/neffex/best_of_me.m4a"
   },
   {
     "id": "5",
     "title": "Back One Day",
-    "artist": "NEFFEX & TheFatRat",
+    "artist": ["NEFFEX", "TheFatRat"],
     "album": "Neffex",
     "year": 2023,
     "genre": "HipHop/Rap",
     "duration": "3:54",
     "cover": "https://i.ytimg.com/vi/3_3PFGIfqPg/maxresdefault.jpg",
-    "audioUrl": "/music/01/5.m4a"
+    "audioUrl": "/music/neffex/back_one_day.m4a"
+  },
+  {
+    "id": "6",
+    "title": "Bloodlust",
+    "artist": "Geoxor",
+    "album": "Geoxor",
+    "year": 2023,
+    "genre": "Dance/Electrónica",
+    "duration": "3:54",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273c59e9137a4e88a8529a9737b",
+    "audioUrl": "/music/geoxor/bloodlust.m4a"
+  }
+  ,
+  {
+    "id": "7",
+    "title": "Dreams",
+    "artist": "Geoxor",
+    "album": "Geoxor",
+    "year": 2023,
+    "genre": "Dance/Electrónica",
+    "duration": "3:54",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273218b8dd02c70282b6c332022",
+    "audioUrl": "/music/geoxor/dreams.m4a"
+  }
+  ,
+  {
+    "id": "8",
+    "title": "Ephemeral",
+    "artist": "Geoxor",
+    "album": "Geoxor",
+    "year": 2023,
+    "genre": "Dance/Electrónica",
+    "duration": "3:54",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/7838b0db5ae4a2cd137a35cdbbfc952a/0x1900-000000-80-0-0.jpg",
+    "audioUrl": "/music/geoxor/ephemeral.m4a"
+  },
+  {
+    "id": "9",
+    "title": "Nandayo",
+    "artist": "Geoxor",
+    "album": "Geoxor",
+    "year": 2023,
+    "genre": "Dance/Electrónica",
+    "duration": "3:54",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/c0e017aa0e34f82d5b14266616eeb2dd/0x1900-000000-80-0-0.jpg",
+    "audioUrl": "/music/geoxor/nandayo.m4a"
+  },
+  {
+    "id": "10",
+    "title": "Shaii",
+    "artist": "Geoxor",
+    "album": "Geoxor",
+    "year": 2023,
+    "genre": "Dance/Electrónica",
+    "duration": "3:54",
+    "cover": "https://i1.sndcdn.com/artworks-000518668305-32m13m-t500x500.jpg",
+    "audioUrl": "/music/geoxor/shaii.m4a"
   }
 ]

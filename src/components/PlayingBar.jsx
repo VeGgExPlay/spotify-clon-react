@@ -104,7 +104,7 @@ export function PlayingBar() {
         )}
       </section>
       <section
-        className={`flex flex-1 flex-col max-w[722px] w-1/3 items-center ${classDisabled}`}
+        className={`flex flex-1 flex-col max-w[722px] w-1/3 items-center gap-2 ${classDisabled}`}
       >
         <div className="flex w-full justify-center">
           <div className="flex gap-7">

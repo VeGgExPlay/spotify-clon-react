@@ -60,7 +60,7 @@ export function AsideMenu() {
           title={"Canciones que te gustan"}
           description={"Lista - 1 canción"}
         />
-        {songs?.map((song) => (
+        {songs?.slice(4).map((song) => (
           <SideMenuCard
             key={song.id}
             song={song}

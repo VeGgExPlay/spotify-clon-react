@@ -36,6 +36,16 @@ export function MusicProvider({ children }) {
       }
     };
 
+    // Escuchar cuando se pausa la canción desde cualquier parte
+    const handlePause = () => {
+      setIsPaused(true)
+    }
+
+    // Escuchar cuando se resume la canción desde cualquier parte
+    const handleResume = () => {
+      setIsPaused(false)
+    }
+
     const audio = audioRef.current;
 
     // Establecer el audio actual en base al audio actual de la canción
@@ -51,6 +61,8 @@ export function MusicProvider({ children }) {
       audio.addEventListener("timeupdate", updateTime);
       audio.addEventListener("loadedmetadata", updateDuration);
       audio.addEventListener("ended", handleEnded);
+      audio.addEventListener("pause", handlePause);
+      audio.addEventListener("play", handleResume);
     }
 
     return () => {
@@ -61,6 +73,11 @@ export function MusicProvider({ children }) {
       }
     };
   }, [currentIndex, songs]);
+
+  // Escuchar cuando la música se pausa desde cualquier otra parte
+  useEffect(() => {
+
+  }, [])
 
   const nextSong = () => {
     if (currentIndex !== -1 && currentIndex < songs.length - 1) {
@@ -75,9 +92,6 @@ export function MusicProvider({ children }) {
   };
 
   const playSong = (song) => {
-    if (isPaused) {
-      setIsPaused(!isPaused);
-    }
     if (audioRef.current) {
       audioRef.current.pause();
     }
@@ -86,6 +100,24 @@ export function MusicProvider({ children }) {
       audioRef.current = new Audio(song.audioUrl);
     } else {
       audioRef.current.src = song.audioUrl;
+    }
+
+    // Controlar los datos del botón de control de medios del navegador
+    if ("mediaSession" in navigator) {
+      navigator.mediaSession.metadata = new window.MediaMetadata({
+        title: song.title,
+        artist: Array.isArray(song.artist)
+          ? song.artist.join(" & ")
+          : song.artist,
+        album: song.album,
+        artwork: [
+          {
+            src: song.cover,
+            sizes: "512x512",
+            type: "image/jpeg",
+          },
+        ],
+      });
     }
     setCurrentSong(song);
     audioRef.current.play().catch((err) => {

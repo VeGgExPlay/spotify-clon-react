@@ -1,4 +1,12 @@
-import { Bell, Download, Explore, House, Logo, Magnifyer, People } from "../icons/Library";
+import {
+  Bell,
+  Download,
+  Explore,
+  House,
+  Logo,
+  Magnifyer,
+  People,
+} from "../icons/Library";
 
 export function NavBar() {
   return (
@@ -10,7 +18,7 @@ export function NavBar() {
           </div>
         </section>
         <section className="flex flex-1 justify-center items-center h-full gap-2">
-            <button className="bg-[#3f3f3f] h-full rounded-full cursor-pointer p-3 opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
+          <button className="bg-[#3f3f3f] h-full rounded-full cursor-pointer p-3 opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
             <House></House>
           </button>
           <div className="flex outline-2 outline-transparent bg-[#3f3f3f] h-full rounded-full gap-4 opacity-75 transition-all duration-300 hover:opacity-100 focus-within:outline-white">
@@ -30,31 +38,33 @@ export function NavBar() {
             </div>
           </div>
         </section>
-        <section className="flex flex-1 h-full justify-end gap-6">
-            <button className="bg-white text-black font-bold rounded-full px-4">
-              <span>
-                Descubrir Premium
-              </span>
+        <section className="flex flex-1 h-full justify-end gap-6 items-center">
+          <button className="bg-white text-black font-bold rounded-full px-4 h-2/3">
+            <span>Descubrir Premium</span>
+          </button>
+          <button className="flex h-full gap-2 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-102">
+            <span className="h-1/3">
+              <Download />
+            </span>
+            <span>Instalar app</span>
+          </button>
+          <div className="flex h-full items-center gap-5">
+            <button className="flex h-1/3 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
+              <Bell />
             </button>
-            <button className="flex h-full gap-2 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-102">
-              <span className="h-1/3">
-                <Download />
-              </span>
-              <span>
-                Instalar app
-              </span>
+            <button className="flex h-1/3 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
+              <People />
             </button>
-            <div className="flex h-full items-center gap-5">
-              <button className="flex h-1/3 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
-                <Bell />
-              </button>
-              <button className="flex h-1/3 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
-                <People />
-              </button>
-            </div>
-            <div className="flex bg-[#3f3f3f] rounded-full aspect-square h-full p-2 overflow-hidden items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105">
-              <img className="h-full w-full object-cover rounded-full" src="https://i.scdn.co/image/ab67757000003b8269488b2bf7f7e5e58ac6575c" alt="" />
-            </div>
+          </div>
+          <div className="flex bg-[#3f3f3f] rounded-full aspect-square h-full items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105">
+            <picture className="flex h-full items-center justify-center aspect-square">
+              <img
+                className="h-2/3 w-2/3 object-cover rounded-full"
+                src="https://i.scdn.co/image/ab67757000003b8269488b2bf7f7e5e58ac6575c"
+                alt=""
+              />
+            </picture>
+          </div>
         </section>
       </div>
     </div>
