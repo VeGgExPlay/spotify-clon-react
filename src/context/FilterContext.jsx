@@ -7,7 +7,6 @@ export function FilterProvider({ children }) {
     title: "",
   });
 
-  // Aprender a FILTRAR, ESTO ES DE JUNIORS
   // Pasos:
   // 1.- Crear una función que reciba el valor actual del useState de la lista de productos
   // 2.- Retornar la lista de productos ya filtrada con el ".filter(item)" que recibe una función flecha
@@ -42,7 +41,7 @@ export function FilterProvider({ children }) {
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
-            .trim(); // <- elimina espacios al inicio y final
+            .trim();
 
       return (
         normalizedTitle.includes(normalizedFilter) ||

@@ -18,7 +18,7 @@ export function NavBar() {
 
   const inputRef = useRef();
 
-  const songs = useFetch();
+  const {songs} = useFetch();
   const songsArray = songs ? Object.values(songs).flat() : "";
 
   const classSearchBar = focused ? "" : "opacity-0 pointer-events-none";

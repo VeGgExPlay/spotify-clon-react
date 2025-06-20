@@ -1,31 +1,19 @@
-import './App.css'
-import { AsideMenu } from './components/AsideMenu'
-import { MainContent } from './components/MainContent'
-import { NavBar } from './components/NavBar'
-import { PlayingBar } from './components/PlayingBar'
-import { FilterProvider } from './context/FilterContext'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { MainContent } from "./components/MainContent";
+import { MusicDetails } from "./components/MusicDetails";
 
 function App() {
   return (
-    <>
-      <div id='app' className='relative h-screen p-2 gap-2'>
-        <nav className='[grid-area:navbar]'>
-          <FilterProvider>
-            <NavBar></NavBar>
-          </FilterProvider>
-        </nav>
-        <aside className='[grid-area:aside] flex-col flex overflow-y-auto'>
-          <AsideMenu />
-        </aside>
-        <main className='[grid-area:main] rounded-lg bg-[#202020] scrollable'>
-          <MainContent />
-        </main>
-        <footer className='[grid-area:player] rounded-lg min-h-[100px] '>
-          <PlayingBar />
-        </footer>
-      </div>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainContent />} />
+          <Route path="details/:id" element={<MusicDetails />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

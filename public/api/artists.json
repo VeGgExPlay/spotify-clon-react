@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "artist": "NEFFEX",
+    "year": 2021,
+    "genre": "HipHop/Rap",
+    "type": "Artist",
+    "picture": "https://cdn-images.dzcdn.net/images/artist/def3283f36f1b0b1cb0463fcfe1ef5f7/1900x1900-000000-80-0-0.jpg"
+  },
+  {
+    "id": "2",
+    "artist": "Geoxor",
+    "year": 2021,
+    "genre": "Dance/Electrónica",
+    "type": "Artist",
+    "picture": "https://yt3.googleusercontent.com/pH-2_DKCuGvLGcJbkvlQgbcMbyS36jF5auqMNJu6x21xMJQ8Rs_7clc4ggFn7QfZVL8U1I4egg=s900-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "id": "3",
+    "artist": "Mother Mother",
+    "year": 2021,
+    "genre": "Rock",
+    "type": "Artist",
+    "picture": "https://i.scdn.co/image/ab67616100005174fdfbc01d2597633aae65f6b7"
+  }
+]

@@ -19,6 +19,10 @@ html {
   font-family: "CircularStd", system-ui, sans-serif;
 }
 
+button{
+  cursor: pointer;
+}
+
 #app {
   display: grid;
   grid-template-areas:

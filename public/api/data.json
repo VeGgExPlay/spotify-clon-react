@@ -7,6 +7,8 @@
     "year": 2021,
     "genre": "HipHop/Rap",
     "duration": "3:06",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(84, 207, 255, 1) 30%, rgba(0, 102, 143, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/WzQBAc8i73E/maxresdefault.jpg",
     "audioUrl": "/music/neffex/cold.m4a"
   },
@@ -18,6 +20,8 @@
     "year": 2019,
     "genre": "HipHop/Rap",
     "duration": "4:56",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(235, 235, 235, 1) 30%, rgba(115, 115, 115, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/Z6L4u2i97Rw/maxresdefault.jpg",
     "audioUrl": "/music/neffex/careless.m4a"
   },
@@ -29,6 +33,8 @@
     "year": 2022,
     "genre": "HipHop/Rap",
     "duration": "4:07",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 139, 31, 1) 30%, rgba(145, 34, 0, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/NlPvGIZgivQ/maxresdefault.jpg",
     "audioUrl": "/music/neffex/rumors.m4a"
   },
@@ -40,6 +46,8 @@
     "year": 2020,
     "genre": "HipHop/Rap",
     "duration": "3:47",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(0, 4, 255, 1) 30%, rgba(0, 1, 77, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/A4LiP8WFuG0/maxresdefault.jpg",
     "audioUrl": "/music/neffex/best_of_me.m4a"
   },
@@ -51,6 +59,8 @@
     "year": 2023,
     "genre": "HipHop/Rap",
     "duration": "3:54",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(166, 243, 255, 1) 30%, rgba(0, 179, 207, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/3_3PFGIfqPg/maxresdefault.jpg",
     "audioUrl": "/music/neffex/back_one_day.m4a"
   },
@@ -62,10 +72,11 @@
     "year": 2023,
     "genre": "Dance/Electrónica",
     "duration": "3:54",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 0, 0, 1) 30%, rgba(105, 0, 0, 0) 70%)",
     "cover": "https://i.scdn.co/image/ab67616d0000b273c59e9137a4e88a8529a9737b",
     "audioUrl": "/music/geoxor/bloodlust.m4a"
-  }
-  ,
+  },
   {
     "id": "7",
     "title": "Dreams",
@@ -74,10 +85,11 @@
     "year": 2023,
     "genre": "Dance/Electrónica",
     "duration": "3:54",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(132, 0, 255, 1) 30%, rgba(59, 0, 115, 0) 70%)",
     "cover": "https://i.scdn.co/image/ab67616d0000b273218b8dd02c70282b6c332022",
     "audioUrl": "/music/geoxor/dreams.m4a"
-  }
-  ,
+  },
   {
     "id": "8",
     "title": "Ephemeral",
@@ -86,6 +98,8 @@
     "year": 2023,
     "genre": "Dance/Electrónica",
     "duration": "3:54",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(191, 0, 255, 1) 30%, rgba(88, 0, 117, 0) 70%)",
     "cover": "https://cdn-images.dzcdn.net/images/cover/7838b0db5ae4a2cd137a35cdbbfc952a/0x1900-000000-80-0-0.jpg",
     "audioUrl": "/music/geoxor/ephemeral.m4a"
   },
@@ -97,6 +111,8 @@
     "year": 2023,
     "genre": "Dance/Electrónica",
     "duration": "3:54",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 122, 242, 1) 30%, rgba(255, 18, 231, 0) 70%)",
     "cover": "https://cdn-images.dzcdn.net/images/cover/c0e017aa0e34f82d5b14266616eeb2dd/0x1900-000000-80-0-0.jpg",
     "audioUrl": "/music/geoxor/nandayo.m4a"
   },
@@ -108,7 +124,74 @@
     "year": 2023,
     "genre": "Dance/Electrónica",
     "duration": "3:54",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(126, 0, 204, 1) 30%, rgba(65, 0, 102, 0) 70%)",
     "cover": "https://i1.sndcdn.com/artworks-000518668305-32m13m-t500x500.jpg",
     "audioUrl": "/music/geoxor/shaii.m4a"
+  },
+  {
+    "id": "11",
+    "title": "Burning Pile",
+    "artist": "Mother Mother",
+    "album": "Mother Mother",
+    "year": 2023,
+    "genre": "Rock",
+    "duration": "4:22",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 0, 0, 1) 30%, rgba(105, 0, 0, 0) 70%)",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/50ff847cf17165ce63cc9775749c05d8/1900x1900-000000-80-0-0.jpg",
+    "audioUrl": "/music/mother_mother/burning_pile.m4a"
+  },
+  {
+    "id": "12",
+    "title": "Hayloft",
+    "artist": "Mother Mother",
+    "album": "Mother Mother",
+    "year": 2023,
+    "genre": "Rock",
+    "duration": "3:01",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 138, 138, 1) 30%, rgba(252, 23, 23, 0) 70%)",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVhiw2e1RkfxLuqgISyD1kH6fNLx8YX2Y9JQ&s",
+    "audioUrl": "/music/mother_mother/hayloft.m4a"
+  },
+  {
+    "id": "13",
+    "title": "Hayloft II",
+    "artist": "Mother Mother",
+    "album": "Mother Mother",
+    "year": 2023,
+    "genre": "Rock",
+    "duration": "3:34",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 0, 0, 1) 30%, rgba(105, 0, 0, 0) 70%)",
+    "cover": "https://i1.sndcdn.com/artworks-GNlN5Dkh8Yln-0-t500x500.jpg",
+    "audioUrl": "/music/mother_mother/hayloft_ii.m4a"
+  },
+  {
+    "id": "14",
+    "title": "Oh Ana",
+    "artist": "Mother Mother",
+    "album": "Mother Mother",
+    "year": 2023,
+    "genre": "Rock",
+    "duration": "3:17",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(255, 138, 138, 1) 30%, rgba(252, 23, 23, 0) 70%)",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2739334fc21964be25ec3179f0f",
+    "audioUrl": "/music/mother_mother/oh_ana.m4a"
+  },
+  {
+    "id": "15",
+    "title": "Problems",
+    "artist": "Mother Mother",
+    "album": "Mother Mother",
+    "year": 2023,
+    "genre": "Rock",
+    "duration": "3:27",
+    "type": "song",
+    "color": "linear-gradient(180deg,rgba(38, 155, 201, 1) 30%, rgba(47, 196, 109, 0) 50%, rgba(255, 232, 23, 1) 70%)",
+    "cover": "https://akamai.sscdn.co/uploadfile/letras/albuns/d/5/2/6/946921597837296.jpg",
+    "audioUrl": "/music/mother_mother/problems.m4a"
   }
 ]

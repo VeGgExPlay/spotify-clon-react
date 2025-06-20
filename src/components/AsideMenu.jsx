@@ -1,10 +1,7 @@
 import {
   Contract,
   FullScreen,
-  Heart,
   Magnifyer,
-  Pin,
-  Play,
   Plus,
   Sandwich,
 } from "../icons/Library";
@@ -13,7 +10,7 @@ import { useFetch } from "../hooks/useFetch";
 import { SideMenuCard } from "./SideMenuCard";
 
 export function AsideMenu() {
-  const songs = useFetch();
+  const {songs} = useFetch();
 
   if (!songs) return <p>Cargando canciones...</p>;
 
@@ -60,7 +57,7 @@ export function AsideMenu() {
           title={"Canciones que te gustan"}
           description={"Lista - 1 canción"}
         />
-        {songs?.slice(4).map((song) => (
+        {songs?.slice(0, 4).map((song) => (
           <SideMenuCard
             key={song.id}
             song={song}

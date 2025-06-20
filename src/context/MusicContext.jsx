@@ -4,7 +4,7 @@ import { useFetch } from "../hooks/useFetch";
 export const MusicContext = createContext();
 
 export function MusicProvider({ children }) {
-  const songs = useFetch();
+  const {songs} = useFetch();
 
   const [isPaused, setIsPaused] = useState(false);
   const [currentSong, setCurrentSong] = useState(null);

@@ -2,7 +2,7 @@ import { useFetch } from "../hooks/useFetch";
 import { SongCard } from "./SongCard";
 
 export function MainContent() {
-  const songs = useFetch();
+  const {songs} = useFetch();
 
   if (!songs) return <p>Cargando...</p>;
 

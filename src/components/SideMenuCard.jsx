@@ -1,13 +1,17 @@
 import { Play, Pin } from "../icons/Library";
 import { useMusic } from "../context/MusicContext";
+import { useNavigate } from "react-router-dom";
 
 export function SideMenuCard({ song, cover, title, description, isPlayList }) {
   const { playSong, currentSong } = useMusic();
 
+  const navigate = useNavigate();
+
   const classActualSong = currentSong?.id === song?.id ? "" : "hidden";
 
   const handleClick = () => {
-    playSong(song);
+    /* playSong(song); */
+    navigate(`details/${song.id}`)
   };
 
   if (isPlayList || !song)
