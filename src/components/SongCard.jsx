@@ -1,13 +1,16 @@
 import { useMusic } from "../context/MusicContext";
 import { Vinyl } from "../icons/Library";
+import { useNavigate } from "react-router-dom";
 
 export function SongCard({ song }) {
   const { currentSong, playSong } = useMusic();
+  const navigate = useNavigate()
 
   const classActualSong = song?.id === currentSong?.id ? "" : "hidden";
 
   const handleClick = () => {
-    playSong(song);
+    /* playSong(song); */
+    navigate(`song/${song.id}`)
   };
 
   return (

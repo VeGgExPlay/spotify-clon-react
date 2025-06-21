@@ -11,10 +11,12 @@ import { SearchBarResults } from "./SearchBarResults";
 import { useFetch } from "../hooks/useFetch";
 import { useFilter } from "../context/FilterContext";
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function NavBar() {
   const [focused, setFocused] = useState(false);
   const { setFilters, filterSong } = useFilter();
+  const navigate = useNavigate()
 
   const inputRef = useRef();
 
@@ -44,9 +46,9 @@ export function NavBar() {
     <div className="flex flex-1 h-full items-center px-4">
       <div className="flex w-full h-full justify-between items-center gap-4">
         <section className="flex flex-1 h-full justify-between items-center gap-10">
-          <div className="h-3/4 cursor-pointer">
+          <button onClick={() => navigate("/")} className="h-3/4 cursor-pointer">
             <Logo></Logo>
-          </div>
+          </button>
         </section>
         <section className="flex flex-1 justify-center items-center h-full gap-2">
           <button className="bg-[#3f3f3f] h-full rounded-full cursor-pointer p-3 opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">

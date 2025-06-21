@@ -21,7 +21,7 @@
     "genre": "HipHop/Rap",
     "duration": "4:56",
     "type": "song",
-    "color": "linear-gradient(180deg,rgba(235, 235, 235, 1) 30%, rgba(115, 115, 115, 0) 70%)",
+    "color": "linear-gradient(180deg,rgba(235, 235, 235, 0.5) 30%, rgba(115, 115, 115, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/Z6L4u2i97Rw/maxresdefault.jpg",
     "audioUrl": "/music/neffex/careless.m4a"
   },
@@ -47,7 +47,7 @@
     "genre": "HipHop/Rap",
     "duration": "3:47",
     "type": "song",
-    "color": "linear-gradient(180deg,rgba(0, 4, 255, 1) 30%, rgba(0, 1, 77, 0) 70%)",
+    "color": "linear-gradient(180deg,rgba(0, 4, 255, 0.5) 30%, rgba(0, 1, 77, 0) 70%)",
     "cover": "https://i.ytimg.com/vi/A4LiP8WFuG0/maxresdefault.jpg",
     "audioUrl": "/music/neffex/best_of_me.m4a"
   },
@@ -190,7 +190,7 @@
     "genre": "Rock",
     "duration": "3:27",
     "type": "song",
-    "color": "linear-gradient(180deg,rgba(38, 155, 201, 1) 30%, rgba(47, 196, 109, 0) 50%, rgba(255, 232, 23, 1) 70%)",
+    "color": "linear-gradient(180deg,rgba(38, 155, 201, 1) 30%, rgba(255, 232, 23, 0) 70%",
     "cover": "https://akamai.sscdn.co/uploadfile/letras/albuns/d/5/2/6/946921597837296.jpg",
     "audioUrl": "/music/mother_mother/problems.m4a"
   }

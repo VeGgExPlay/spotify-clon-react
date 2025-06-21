@@ -4,6 +4,7 @@ import { Pause, Play } from "../icons/Library";
 import { useMusic } from "../context/MusicContext";
 import { GradientBackground } from "./GradientBackground";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export function MusicDetails() {
   const {
@@ -16,11 +17,27 @@ export function MusicDetails() {
   } = useMusic();
   const { songs, artists } = useFetch();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   if (!songs || !artists) return <div>Cargando...</div>;
 
   const detailSong = songs?.find((songs) => songs.id === id);
-  const artist = artists?.find((artist) => detailSong.artist === artist.artist);
+
+  if (detailSong === undefined) return <div>No hay...</div>;
+
+  const artistArray = Array.isArray(detailSong.artist)
+    ? detailSong.artist
+    : [detailSong.artist];
+
+  const matchedArtists = [];
+
+  artistArray.forEach((item) => {
+    const match = artists.find((artist) => artist.artist === item);
+
+    if (match) {
+      matchedArtists.push(match);
+    }
+  });
 
   const isCurrentSong = currentSong?.id === detailSong.id ? true : false;
 
@@ -34,7 +51,7 @@ export function MusicDetails() {
 
   const handlePlay = () => {
     setIsPaused(!isPaused);
-    if (isPaused) {
+    if (isPaused && isCurrentSong) {
       resumeSong();
     } else if (!currentSong || !isCurrentSong) {
       playSong(detailSong);
@@ -54,49 +71,68 @@ export function MusicDetails() {
     >
       <div className="flex flex-1 h-full">
         <section className="flex flex-col flex-1 relative">
-          <GradientBackground detailSong={detailSong} />
-          <header className="flex relative h-max w-full items-end overflow-hidden">
-            <GradientBackground
-              detailSong={detailSong}
-              top={"0"}
-              height={"150%"}
-              opacity={"50"}
-            />
-            <div className="flex h-full w-full items-end p-6 z-10">
-              <picture className="flex h-60 aspect-square rounded-md overflow-hidden shadow-2xl">
-                <img className="object-cover" src={detailSong.cover} alt="" />
-              </picture>
-              <article className="flex flex-col gap-4 p-6">
-                <div>
-                  <p className="font-bold text-sm">
-                    {detailSong.type === "song" ? "Canción" : "Album"}
-                  </p>
-                  <strong className="text-7xl">{detailSong.title}</strong>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <picture className="flex h-6 aspect-square rounded-full overflow-hidden">
-                    <img
-                      className="object-cover h-auto w-auto"
-                      src={artist.picture}
-                      alt=""
-                    />
-                  </picture>
-                  <p className="font-semibold text-md">{detailSong.artist}</p>
-                  <span className="text-center font-bold">·</span>
-                  <p className="font-semibold text-md">{detailSong.title}</p>
-                  <span className="text-center font-bold">·</span>
-                  <p className="font-semibold text-md opacity-75">
-                    {detailSong.year}
-                  </p>
-                  <span className="text-center font-bold">·</span>
-                  <p className="font-semibold text-md opacity-75">
-                    {detailSong.duration}
-                  </p>
-                </div>
-              </article>
+          <div
+            style={{
+              background: `${detailSong.color}`,
+            }}
+            id="gradient1"
+            className={`absolute h-9/12 w-full z-20 opacity-30 pointer-events-none`}
+          ></div>
+          <div
+            style={{
+              background: `${detailSong.color}`,
+            }}
+            id="gradient2"
+            className={`absolute h-9/12 w-full opacity-85 pointer-events-none`}
+          ></div>
+          <header className="flex relative min-h-fit items-end overflow-hidden">
+            <div className="flex h-full w-full relative items-end">
+              <div className="absolute bottom-0 left-0 h-full w-full z-10 bg-gradient-to-t from-black/35 to-transparent"></div>
+              <div className="flex h-full w-full relative items-end p-6 z-20">
+                <picture className="flex h-60 aspect-square rounded-md overflow-hidden shadow-2xl">
+                  <img className="object-cover" src={detailSong.cover} alt="" />
+                </picture>
+                <article className="flex flex-col gap-4 p-6">
+                  <div>
+                    <p className="font-bold text-sm">
+                      {detailSong.type === "song" ? "Canción" : "Album"}
+                    </p>
+                    <strong className="text-7xl">{detailSong.title}</strong>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <div className="flex">
+                      {matchedArtists?.map((artist) => (
+                        <picture
+                          key={artist.id}
+                          className="flex h-6 aspect-square rounded-full overflow-hidden"
+                        >
+                          <img
+                            className="object-cover h-auto w-auto"
+                            src={artist.picture}
+                            alt=""
+                          />
+                        </picture>
+                      ))}
+                    </div>
+                    <p className="font-semibold text-md">
+                      {/* {detailSong.artist} */}
+                    </p>
+                    <span className="text-center font-bold">·</span>
+                    <p className="font-semibold text-md">{detailSong.title}</p>
+                    <span className="text-center font-bold">·</span>
+                    <p className="font-semibold text-md opacity-75">
+                      {detailSong.year}
+                    </p>
+                    <span className="text-center font-bold">·</span>
+                    <p className="font-semibold text-md opacity-75">
+                      {detailSong.duration}
+                    </p>
+                  </div>
+                </article>
+              </div>
             </div>
           </header>
-          <section className="flex flex-1">
+          <section className="flex w-full">
             <div className="flex flex-1 flex-col p-6 gap-6 z-20">
               <div className="flex h-16 w-full">
                 <button
@@ -106,19 +142,27 @@ export function MusicDetails() {
                   {classPaused}
                 </button>
               </div>
-              <button className="flex items-center gap-4 h-25 w-full p-2 rounded-sm transition-colors duration-75 hover:bg-[#333333]/50">
-                <picture className="flex h-full aspect-square rounded-full overflow-hidden">
-                  <img
-                    className="h-full w-full object-cover"
-                    src={artist.picture}
-                    alt=""
-                  />
-                </picture>
-                <div className="flex flex-col items-start">
-                  <p className="font-semibold text-md">Artista</p>
-                  <strong className="text-lg">{detailSong.artist}</strong>
-                </div>
-              </button>
+              <div className="flex">
+                {matchedArtists?.map((artist) => (
+                  <button
+                    key={artist.id}
+                    onClick={() => navigate(`/artist/${artist.artist}`)}
+                    className="flex items-center gap-4 h-25 w-full p-2 rounded-sm transition-colors duration-75 hover:bg-[#333333]/50"
+                  >
+                    <picture className="flex h-full aspect-square rounded-full overflow-hidden">
+                      <img
+                        className="h-full w-full object-cover"
+                        src={artist.picture}
+                        alt=""
+                      />
+                    </picture>
+                    <div className="flex flex-col items-start">
+                      <p className="font-semibold text-md">Artista</p>
+                      <strong className="text-lg">{artist.artist}</strong>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </section>
         </section>

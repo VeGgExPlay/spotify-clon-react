@@ -1,6 +1,7 @@
 export function GradientBackground({ detailSong, top, height, opacity }) {
   return (
     <div
+    id="gradient"
       style={{
         background: `
       ${detailSong.color}
