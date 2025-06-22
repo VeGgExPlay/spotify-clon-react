@@ -54,8 +54,6 @@ export function PlayingBar() {
     }
   };
 
-  if(!currentSong) return
-
   const handleChange = (event) => {
     const value = Number(event.target.value);
     audioRef.current.currentTime = value;
@@ -84,7 +82,10 @@ export function PlayingBar() {
   }
 
   // Formatear los artistas en caso de que sean array
-  const artist = Array.isArray(currentSong.artist) ? currentSong.artist.join(" & ") : currentSong.artist
+  if(currentSong){
+    const artist = Array.isArray(currentSong.artist) ? currentSong.artist.join(" & ") : currentSong.artist
+    return artist
+  }
 
   return (
     <div className="flex p-2 w-full h-full items-center justify-between">
