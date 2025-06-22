@@ -57,10 +57,10 @@ button{
 }
 
 @media (max-width: 450px) {
-  aside {
+  #asideLayout {
     display: none;
   }
-  footer {
+  #footerLayout {
     display: none;
   }
   #app {

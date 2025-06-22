@@ -67,10 +67,10 @@ export function MusicDetails() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="flex flex-1 h-full"
+      className="flex flex-1 h-full w-full"
     >
-      <div className="flex flex-1 h-full">
-        <section className="flex flex-col flex-1 relative">
+      <div className="flex flex-1 h-full w-full">
+        <section className="flex flex-col h-full w-full relative">
           <div
             style={{
               background: `${detailSong.color}`,
@@ -87,17 +87,17 @@ export function MusicDetails() {
           ></div>
           <header className="flex relative min-h-fit items-end overflow-hidden">
             <div className="flex h-full w-full relative items-end">
-              <div className="absolute bottom-0 left-0 h-full w-full z-10 bg-gradient-to-t from-black/35 to-transparent"></div>
-              <div className="flex h-full w-full relative items-end p-6 z-20">
+              <div className="absolute bottom-0 left-0 h-full w-full z-10 sm:z-10 bg-gradient-to-t from-black/75 sm:from-black/35 to-transparent"></div>
+              <div className="flex h-full w-full relative justify-center sm:justify-start sm:items-end p-6 sm:z-20">
                 <picture className="flex h-60 aspect-square rounded-md overflow-hidden shadow-2xl">
-                  <img className="object-cover" src={detailSong.cover} alt="" />
+                  <img className="h-full w-full object-cover" src={detailSong.cover} alt="" />
                 </picture>
-                <article className="flex flex-col gap-4 p-6">
+                <article className="flex bottom-0 left-0 absolute sm:static flex-col gap-4 p-6 z-20">
                   <div>
                     <p className="font-bold text-sm">
                       {detailSong.type === "song" ? "Canción" : "Album"}
                     </p>
-                    <strong className="text-7xl">{detailSong.title}</strong>
+                    <strong className="text-5xl sm:text-7xl">{detailSong.title}</strong>
                   </div>
                   <div className="flex gap-2 items-center">
                     <div className="flex">
@@ -139,10 +139,12 @@ export function MusicDetails() {
                   onClick={handlePlay}
                   className="flex items-center justify-center h-full aspect-square bg-green-500 rounded-full text-black transition-transform duration-75 hover:scale-102"
                 >
-                  {classPaused}
+                  <span className="h-1/2">
+                    {classPaused}
+                  </span>
                 </button>
               </div>
-              <div className="flex">
+              <div className="flex flex-col sm:flex-row">
                 {matchedArtists?.map((artist) => (
                   <button
                     key={artist.id}

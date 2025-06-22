@@ -81,6 +81,9 @@ export function PlayingBar() {
     return `${minutes}:${secs}`;
   }
 
+  // Formatear los artistas en caso de que sean array
+  const artist = Array.isArray(currentSong.artist) ? currentSong.artist.join(" & ") : currentSong.artist
+
   return (
     <div className="flex p-2 w-full h-full items-center justify-between">
       <div className="hidden sm:flex gap-2 w-full h-full items-center justify-between">
@@ -99,7 +102,7 @@ export function PlayingBar() {
                 <strong className="text-md">{currentSong.title}</strong>
               </header>
               <footer>
-                <span className="text-xs opacity-75">{currentSong.artist}</span>
+                <span className="text-xs opacity-75">{artist}</span>
               </footer>
             </div>
           </div>

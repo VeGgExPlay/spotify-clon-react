@@ -16,15 +16,15 @@ export function Layout() {
           <NavBar></NavBar>
         </FilterProvider>
       </nav>
-      <aside className="[grid-area:aside] flex-col flex overflow-y-auto">
+      <aside id='asideLayout' className="[grid-area:aside] flex-col flex overflow-y-auto">
         <AsideMenu />
       </aside>
-      <main className="[grid-area:main] rounded-lg bg-[#202020] scrollable">
+      <main id='mainLayout' className="[grid-area:main] rounded-lg bg-[#202020] scrollable">
         <AnimatePresence>
           <Outlet key={location.pathname}/>
         </AnimatePresence>
       </main>
-      <footer className="[grid-area:player] rounded-lg min-h-[100px] ">
+      <footer id='footerLayout' className="[grid-area:player] rounded-lg min-h-[100px] ">
         <PlayingBar />
       </footer>
       <MusicIsland />

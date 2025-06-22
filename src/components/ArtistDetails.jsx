@@ -1,8 +1,7 @@
 import { useFetch } from "../hooks/useFetch";
 import { Link, useParams } from "react-router-dom";
-import { Pause, Play } from "../icons/Library";
+import { Play } from "../icons/Library";
 import { useMusic } from "../context/MusicContext";
-import { GradientBackground } from "./GradientBackground";
 import { motion } from "framer-motion";
 import { linearGradient } from "framer-motion/client";
 
@@ -61,12 +60,6 @@ export function ArtistDetails() {
                 alt=""
               />
             </picture>
-            {/* <GradientBackground
-              detailSong={artist}
-              top={"0"}
-              height={"150%"}
-              opacity={"75"}
-            /> */}
             <div className="flex h-full w-full items-end p-6 z-20">
               <article className="flex flex-col gap-4 p-6">
                 <div>
@@ -90,7 +83,9 @@ export function ArtistDetails() {
                   onClick={handlePlay}
                   className="flex items-center justify-center h-full aspect-square bg-green-500 rounded-full text-black transition-transform duration-75 hover:scale-102"
                 >
-                  <Play />
+                  <span className="h-1/2">
+                    <Play />
+                  </span>
                 </button>
                 <button className="flex h-fit border-1 border-white/50 items-center rounded-full px-4 py-2 transition-all duration-75 hover:border-white hover:scale-104">
                   <p className="font-semibold">Seguir</p>

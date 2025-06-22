@@ -6,7 +6,7 @@
     "genre": "HipHop/Rap",
     "type": "Artist",
     "color": "#B3B3B3",
-    "picture": "https://cdn-images.dzcdn.net/images/artist/def3283f36f1b0b1cb0463fcfe1ef5f7/1900x1900-000000-80-0-0.jpg"
+    "picture": "/artists/neffex.webp"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "genre": "Dance/Electrónica",
     "type": "Artist",
     "color": "#8C00FF",
-    "picture": "https://yt3.googleusercontent.com/pH-2_DKCuGvLGcJbkvlQgbcMbyS36jF5auqMNJu6x21xMJQ8Rs_7clc4ggFn7QfZVL8U1I4egg=s900-c-k-c0x00ffffff-no-rj"
+    "picture": "/artists/geoxor.webp"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "genre": "Rock",
     "type": "Artist",
     "color": "#FF0000",
-    "picture": "https://billboard.ar/wp-content/uploads/2025/03/679cd70ff9bab296653c77ee_mother-mother_216c9dc96121.webp"
+    "picture": "/artists/mother_mother.webp"
   },
   {
     "id": "4",
@@ -33,6 +33,6 @@
     "genre": "Electrónica",
     "type": "Artist",
     "color": "#00FFBF",
-    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/TheFatRat.jpg/1200px-TheFatRat.jpg"
+    "picture": "/artists/thefatrat.webp"
   }
 ]

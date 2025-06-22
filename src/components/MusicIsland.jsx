@@ -54,7 +54,7 @@ const rgbaColor = hexToRgba(color, 0.3); // Por ejemplo 50% de opacidad
         className="flex relative flex-col flex-1 rounded-md backdrop-blur-lg overflow-hidden">
           <div className="flex w-full h-full justify-between p-2">
             <section className="flex items-center gap-3">
-              <picture className="flex h-full aspect-square">
+              <picture className="flex h-full aspect-square rounded-md overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={currentSong.cover}
