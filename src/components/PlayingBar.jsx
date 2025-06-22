@@ -54,6 +54,8 @@ export function PlayingBar() {
     }
   };
 
+  if(!currentSong) return
+
   const handleChange = (event) => {
     const value = Number(event.target.value);
     audioRef.current.currentTime = value;
