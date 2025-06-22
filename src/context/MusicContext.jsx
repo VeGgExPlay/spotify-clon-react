@@ -235,6 +235,14 @@ export function MusicProvider({ children }) {
     audioRef.current.play();
   };
 
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60)
+      .toString()
+      .padStart(2, "0");
+    return `${minutes}:${secs}`;
+  }
+
   return (
     <MusicContext.Provider
       value={{
@@ -252,7 +260,8 @@ export function MusicProvider({ children }) {
         prevSong,
         isPaused,
         setIsPaused,
-        playListStart
+        playListStart,
+        formatTime
       }}
     >
       {children}

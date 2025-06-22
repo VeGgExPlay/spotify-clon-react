@@ -17,17 +17,17 @@ export function AsideMenu() {
   return (
     <div className="flex overflow-x-hidden sm:overflow-x-auto flex-col flex-1 bg-[#121212] rounded-lg p-4 gap-5">
       <section className="flex flex-col gap-5">
-        <div className="flex justify-center sm:justify-between">
-          <button className="flex gap-2 items-center">
+        <div className="flex justify-center items-center sm:justify-between">
+          <button className="flex gap-2 h-1/2 items-center">
             <Contract />
             <span className="hidden lg:block">Tu bliblioteca</span>
           </button>
-          <div className="hidden gap-2 sm:flex">
-            <button className="flex bg-[#333333] py-1 px-3 rounded-full gap-2 items-center">
+          <div className="hidden h-full gap-2 sm:flex">
+            <button className="flex bg-[#333333] h-full py-2 px-3 rounded-full gap-2 items-center">
               <Plus />
               <span className="hidden lg:block">Crear</span>
             </button>
-            <button className="cursor-pointer transition-colors duration-300 hover:bg-[#333333] p-2 rounded-full gap-2 items-center">
+            <button className="cursor-pointer h-full transition-colors duration-300 hover:bg-[#333333] p-2 rounded-full gap-2 items-center">
               <FullScreen />
             </button>
           </div>
@@ -46,7 +46,7 @@ export function AsideMenu() {
           <button className="h-8 transition-colors duration-300 cursor-pointer p-2 hover:bg-[#333333] rounded-full">
             <Magnifyer />
           </button>
-          <button className="hidden sm:flex opacity-50 cursor-pointer transition-transform duration-100 hover:opacity-100 hover:scale-105 gap-2 items-center text-white">
+          <button className="hidden h-1/2 sm:flex opacity-50 cursor-pointer transition-transform duration-100 hover:opacity-100 hover:scale-105 gap-2 items-center text-white">
             <span>Recientes</span>
             <Sandwich />
           </button>

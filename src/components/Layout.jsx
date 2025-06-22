@@ -6,10 +6,11 @@ import { PlayingBar } from './PlayingBar'
 import { FilterProvider } from '../context/FilterContext'
 import { Outlet } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion'
+import { MusicIsland } from './MusicIsland'
 
 export function Layout() {
   return (
-    <div id="app" className="relative h-screen p-2 gap-2">
+    <div id="app" className="relative p-2 gap-2">
       <nav className="[grid-area:navbar]">
         <FilterProvider>
           <NavBar></NavBar>
@@ -26,6 +27,7 @@ export function Layout() {
       <footer className="[grid-area:player] rounded-lg min-h-[100px] ">
         <PlayingBar />
       </footer>
+      <MusicIsland />
     </div>
   );
 }

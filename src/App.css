@@ -57,7 +57,17 @@ button{
 }
 
 @media (max-width: 450px) {
+  aside {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
   #app {
+    grid-template-areas:
+    "navbar navbar navbar"
+    "main main main"
+    "main main main";
     grid-template-columns: minmax(40px, 60px) 1fr;
   }
 }

@@ -16,6 +16,7 @@ import {
 import { useEffect, useState } from "react";
 
 import { useMusic } from "../context/MusicContext";
+import { MusicIsland } from "./MusicIsland";
 
 export function PlayingBar() {
   const {
@@ -81,8 +82,9 @@ export function PlayingBar() {
   }
 
   return (
-    <div className="flex p-2 gap-2 w-full h-full items-center justify-between">
-      <section className="flex flex-1 h-14 sm:flex-1 flex-[0.5]">
+    <div className="flex p-2 w-full h-full items-center justify-between">
+      <div className="hidden sm:flex gap-2 w-full h-full items-center justify-between">
+        <section className="flex flex-1 h-14 sm:flex-1 flex-[0.5]">
         {currentSong && (
           <div className="flex w-full h-full gap-3 items-center">
             <picture className="aspect-square h-full rounded-md overflow-hidden">
@@ -107,29 +109,29 @@ export function PlayingBar() {
         className={`flex flex-1 flex-col items-center gap-2 ${classDisabled} w-full sm:w-1/3 sm:max-w-[722px]`} >
         <div className="flex w-full justify-center items-center">
           <div className="flex gap-7 items-center">
-            <button className="hidden sm:flex">
+            <button className="hidden sm:flex h-4">
               <span>
                 <Shuffle />
               </span>
             </button>
-            <button className="cursor-pointer" onClick={prevSong}>
+            <button className="cursor-pointer h-4" onClick={prevSong}>
               <span>
                 <Prev />
               </span>
             </button>
             <button
               onClick={handleClick}
-              className="bg-white rounded-full p-2 cursor-pointer"
+              className="bg-white rounded-full h-10 text-black p-2 cursor-pointer"
               disabled={currentSong ? false : true}
             >
               <span>{playPauseIcon}</span>
             </button>
-            <button className="cursor-pointer" onClick={nextSong}>
+            <button className="cursor-pointer h-4" onClick={nextSong}>
               <span>
                 <Next />
               </span>
             </button>
-            <button className="hidden sm:flex">
+            <button className="hidden sm:flex h-4">
               <span>
                 <Repeat />
               </span>
@@ -156,23 +158,23 @@ export function PlayingBar() {
       </section>
       <section className="flex w-full justify-end flex-1 h-14 sm:flex-1 flex-[0.5]">
         <div className="flex h-full w-full justify-end items-center gap-4">
-          <button className="hidden sm:flex">
+          <button className="hidden sm:flex h-4">
             <span>
               <DevicePlay />
             </span>
           </button>
-          <button className="hidden sm:flex">
+          <button className="hidden sm:flex h-4">
             <span>
               <Queue />
             </span>
           </button>
-          <button className="hidden sm:flex">
+          <button className="hidden sm:flex h-4">
             <span>
               <DeviceConnect />
             </span>
           </button>
           <div className="flex sm:w-25 items-center gap-2 range-vertical">
-            <button onClick={handleMute} className="cursor-pointer">
+            <button onClick={handleMute} className="cursor-pointer h-4">
               {isMuted}
             </button>
             <div className="group hover:cursor-pointer flex relative w-full h-2 items-center justify-end">
@@ -186,11 +188,12 @@ export function PlayingBar() {
               />
             </div>
           </div>
-          <button className="hidden sm:flex">
+          <button className="hidden sm:flex h-4">
             <FullScreenPlay />
           </button>
         </div>
       </section>
+      </div>
     </div>
   );
 }
