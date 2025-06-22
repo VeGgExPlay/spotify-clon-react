@@ -82,7 +82,7 @@ export function PlayingBar() {
 
   return (
     <div className="flex p-2 gap-2 w-full h-full items-center justify-between">
-      <section className="flex flex-1 h-14">
+      <section className="flex flex-1 h-14 sm:flex-1 flex-[0.5]">
         {currentSong && (
           <div className="flex w-full h-full gap-3 items-center">
             <picture className="aspect-square h-full rounded-md overflow-hidden">
@@ -92,7 +92,7 @@ export function PlayingBar() {
                 alt=""
               />
             </picture>
-            <div>
+            <div className="hidden sm:flex flex-col">
               <header>
                 <strong className="text-md">{currentSong.title}</strong>
               </header>
@@ -104,11 +104,10 @@ export function PlayingBar() {
         )}
       </section>
       <section
-        className={`flex flex-1 flex-col max-w[722px] w-1/3 items-center gap-2 ${classDisabled}`}
-      >
-        <div className="flex w-full justify-center">
-          <div className="flex gap-7">
-            <button>
+        className={`flex flex-1 flex-col items-center gap-2 ${classDisabled} w-full sm:w-1/3 sm:max-w-[722px]`} >
+        <div className="flex w-full justify-center items-center">
+          <div className="flex gap-7 items-center">
+            <button className="hidden sm:flex">
               <span>
                 <Shuffle />
               </span>
@@ -130,7 +129,7 @@ export function PlayingBar() {
                 <Next />
               </span>
             </button>
-            <button>
+            <button className="hidden sm:flex">
               <span>
                 <Repeat />
               </span>
@@ -155,24 +154,24 @@ export function PlayingBar() {
           <div>{formatTime(duration)}</div>
         </div>
       </section>
-      <section className="flex justify-end flex-1">
-        <div className="flex items-center gap-4">
-          <button>
+      <section className="flex w-full justify-end flex-1 h-14 sm:flex-1 flex-[0.5]">
+        <div className="flex h-full w-full justify-end items-center gap-4">
+          <button className="hidden sm:flex">
             <span>
               <DevicePlay />
             </span>
           </button>
-          <button>
+          <button className="hidden sm:flex">
             <span>
               <Queue />
             </span>
           </button>
-          <button>
+          <button className="hidden sm:flex">
             <span>
               <DeviceConnect />
             </span>
           </button>
-          <div className="flex w-25 items-center gap-2">
+          <div className="flex sm:w-25 items-center gap-2 range-vertical">
             <button onClick={handleMute} className="cursor-pointer">
               {isMuted}
             </button>
@@ -187,7 +186,7 @@ export function PlayingBar() {
               />
             </div>
           </div>
-          <button>
+          <button className="hidden sm:flex">
             <FullScreenPlay />
           </button>
         </div>

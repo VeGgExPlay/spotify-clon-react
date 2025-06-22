@@ -8,6 +8,15 @@
   font-display: swap;
 }
 
+html, body, #app {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 2;
+  overflow: hidden;
+}
+
+
 body {
   font-family: "CircularStd", system-ui, sans-serif;
   line-height: 1; /* elimina espacio vertical adicional */
@@ -30,8 +39,27 @@ button{
     "aside main main"
     "player player player";
 
-  grid-template-columns: 350px 1fr;
+  grid-template-columns: minmax(180px, 350px) 1fr;
   grid-template-rows: 50px 1fr auto;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  #app {
+    grid-template-columns: minmax(60px, 180px) 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  #app {
+    grid-template-columns: minmax(40px, 60px) 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  #app {
+    grid-template-columns: minmax(40px, 60px) 1fr;
+  }
 }
 
 /* ANIMACIÓN DE CURRENTSONG */
@@ -91,7 +119,34 @@ button{
   border: 2px solid #121212;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
 
+  .grid-item {
+    height: auto;
+    border-radius: 0.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .range-vertical {
+    appearance: none;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    width: 70px;
+  }
+}
 
 
 /* VINYL */

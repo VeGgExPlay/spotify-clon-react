@@ -4,39 +4,42 @@ import { useNavigate } from "react-router-dom";
 
 export function SongCard({ song }) {
   const { currentSong, playSong } = useMusic();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const classActualSong = song?.id === currentSong?.id ? "" : "hidden";
 
   const handleClick = () => {
     /* playSong(song); */
-    navigate(`song/${song.id}`)
+    navigate(`song/${song.id}`);
   };
 
   return (
     <button
       onClick={handleClick}
       key={song.id}
-      className="relative group flex cursor-pointer flex-col gap-2 items-start"
+      className="grid-item"
     >
-      <div className="absolute h-full w-full transition-colors duration-100 group-hover:bg-[#757575]/50 scale-110 rounded-md"></div>
-      <picture className="flex relative h-50 aspect-square rounded-md overflow-hidden">
-        <img className="h-full w-full object-cover" src={song.cover} alt="" />
-        <div className={`absolute bg-black/50 flex h-full w-full ${classActualSong}`}>
-            <div className={`vinyl absolute -bottom-20 -left-20`}>
-            <span className="relative flex h-47 w-47">
+      <div className="flex flex-col w-full h-full gap-2">
+        <picture className="w-full relative aspect-square rounded-md overflow-hidden">
+          <div className={`vinyl h-full aspect-square absolute -bottom-1/2 -left-1/2 ${classActualSong}`}>
+              <span className="relative h-full w-full flex">
                 <picture className="absolute flex h-full w-full aspect-square items-center justify-center rounded-full outline-3 outline-black">
-                    <img className="h-1/2 w-1/2 object-cover rounded-full outline-2 outline-black" src={song.cover} alt="" />
+                  <img
+                    className="h-1/2 w-1/2 object-cover rounded-full outline-2 outline-black"
+                    src={song.cover}
+                    alt={song.title}
+                  />
                 </picture>
                 <Vinyl></Vinyl>
-            </span>
+              </span>
+            </div>
+          <img className="h-full w-full object-cover block" src={song.cover} alt="" />
+        </picture>
+        <div className="flex flex-col text-start">
+          <strong className="text-2xl truncate-text w-full">{song.title}</strong>
+          <p className="truncate-text w-full">{Array.isArray(song.artist) ? song.artist.join(" & ") : song.artist}</p>
         </div>
-        </div>
-      </picture>
-      <h1 className="text-lg font-bold z-10">{song.title}</h1>
-      <p className="opacity-75">
-        {Array.isArray(song.artist) ? song.artist.join(" & ") : song.artist}
-      </p>
+      </div>
     </button>
   );
 }

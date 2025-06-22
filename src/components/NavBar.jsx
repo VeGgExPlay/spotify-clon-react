@@ -82,17 +82,17 @@ export function NavBar() {
             </div>
           </div>
         </section>
-        <section className="flex flex-1 h-full justify-end gap-6 items-center">
-          <button className="bg-white text-black font-bold rounded-full px-4 h-2/3">
+        <section className="flex flex-1 h-full transition-all duration-200 justify-end gap-6 items-center">
+          <button className="bg-white hidden lg:block text-black font-bold rounded-full px-4 h-2/3">
             <span>Descubrir Premium</span>
           </button>
-          <button className="flex h-full gap-2 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-102">
+          <button className="hidden lg:flex h-full gap-2 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-102">
             <span className="h-1/3">
               <Download />
             </span>
             <span>Instalar app</span>
           </button>
-          <div className="flex h-full items-center gap-5">
+          <div className="hidden md:flex h-full items-center gap-5">
             <button className="flex h-1/3 items-center cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
               <Bell />
             </button>

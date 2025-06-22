@@ -38,7 +38,7 @@ export function MainContent() {
       transition={{ duration: 0.3 }}
       className="flex flex-1 h-full"
     >
-      <div className="flex flex-col flex-1 h-max p-8 gap-4">
+      <div className="flex flex-col flex-1 h-max p-8 gap-4 w-full">
         <section className="flex h-auto items-center">
           <ul className="flex gap-2">
             <li className="bg-[#333333] px-3 rounded-full flex items-center justify-center leading-none h-8">
@@ -53,9 +53,9 @@ export function MainContent() {
           <div className="flex flex-col gap-8">
             {Object.entries(groupedByArtist).map(([artist, artistSongs]) => (
               <section key={artist} className="flex flex-col flex-1">
-                <h2 className="text-xl font-bold mb-4">Ver más de {artist}</h2>
+                <h2 className="text-3xl font-bold mb-4">Ver más de {artist}</h2>
 
-                <div className="grid grid-cols-2 w-max md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid-container">
                   {artistSongs.map((song) => (
                     <SongCard key={song.id} song={song} />
                   ))}

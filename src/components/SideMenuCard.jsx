@@ -3,7 +3,7 @@ import { useMusic } from "../context/MusicContext";
 import { useNavigate } from "react-router-dom";
 
 export function SideMenuCard({ song, cover, title, description, isPlayList }) {
-  const { playSong, currentSong } = useMusic();
+  const { currentSong } = useMusic();
 
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ export function SideMenuCard({ song, cover, title, description, isPlayList }) {
   return (
     <button
       onClick={handleClick}
-      className="flex flex-1 text-start group cursor-pointer items-center relative"
+      className="hidden sm:flex flex-1 text-start group cursor-pointer items-center relative"
     >
       <div className="absolute group-hover:bg-[#424242] opacity-25 rounded-lg w-full scale-x-105 scale-y-120 h-full z-10" />
       <div className="flex gap-2 items-center">
