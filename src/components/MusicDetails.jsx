@@ -5,6 +5,7 @@ import { useMusic } from "../context/MusicContext";
 import { GradientBackground } from "./GradientBackground";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { LoadScreen } from "./LoadScreen";
 
 export function MusicDetails() {
   const {
@@ -19,7 +20,7 @@ export function MusicDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  if (!songs || !artists) return <div>Cargando...</div>;
+  if (!songs || !artists) return <LoadScreen />
 
   const detailSong = songs?.find((songs) => songs.id === id);
 

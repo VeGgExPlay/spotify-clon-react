@@ -4,13 +4,14 @@ import { Play } from "../icons/Library";
 import { useMusic } from "../context/MusicContext";
 import { motion } from "framer-motion";
 import { linearGradient } from "framer-motion/client";
+import { LoadScreen } from "./LoadScreen";
 
 export function ArtistDetails() {
   const {playListStart} = useMusic()
   const { songs, artists } = useFetch();
   const { id } = useParams();
 
-  if (!songs || !artists) return <div>Cargando...</div>;
+  if (!songs || !artists) return <LoadScreen />
 
   const artist = artists?.find((artist) => artist.artist === id);
 
