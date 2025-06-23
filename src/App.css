@@ -208,3 +208,8 @@ button{
     transform: translateY(-8px);
   }
 }
+
+
+.musicIslandExpand{
+  height: 90%;
+}

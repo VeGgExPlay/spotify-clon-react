@@ -94,7 +94,7 @@ export function ArtistDetails() {
               </div>
             </div>
           </section>
-          <section className="flex w-full">
+          <section className="flex w-full pb-10">
             <div className="flex flex-1 flex-col p-6 gap-3">
               <h1 className="font-bold text-2xl">Populares</h1>
               <ul className="flex flex-col">
