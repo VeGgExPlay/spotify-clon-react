@@ -17,11 +17,11 @@ import { SearchBar } from "./SearchBar";
 export function NavBar() {
   const [focused, setFocused] = useState(false);
   const { setFilters, filterSong } = useFilter();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const inputRef = useRef();
 
-  const {songs} = useFetch();
+  const { songs } = useFetch();
   const songsArray = songs ? Object.values(songs).flat() : "";
 
   const classSearchBar = focused ? "" : "opacity-0 pointer-events-none";
@@ -45,12 +45,20 @@ export function NavBar() {
 
   return (
     <div className="flex flex-1 h-full items-center px-4">
-      <div className="flex sm:hidden h-full w-full">
-        <SearchBar></SearchBar>
+      <div className="flex flex-1 h-full items-center gap-3 relative sm:static">
+        <button onClick={() => navigate("/")} className="bg-[#3f3f3f] h-full rounded-full cursor-pointer p-3 opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
+          <House></House>
+        </button>
+        <div className="flex sm:hidden h-full w-full">
+          <SearchBar></SearchBar>
+        </div>
       </div>
       <div className="hidden sm:flex w-full h-full justify-between items-center gap-4">
         <section className="flex flex-1 h-full justify-between items-center gap-10">
-          <button onClick={() => navigate("/")} className="h-3/4 cursor-pointer">
+          <button
+            onClick={() => navigate("/")}
+            className="h-3/4 cursor-pointer"
+          >
             <Logo></Logo>
           </button>
         </section>

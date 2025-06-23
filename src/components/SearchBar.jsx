@@ -36,8 +36,8 @@ export function SearchBar() {
   const filteredSongs = filterSong(songsArray);
 
   return (
-    <div className="h-full w-full relative">
-      <div className="flex outline-2 outline-transparent bg-[#3f3f3f] h-full rounded-full gap-4 opacity-75 transition-all duration-300 hover:opacity-100 focus-within:outline-white">
+    <div className="h-full w-full sm:relative">
+      <div className="flex outline-2 outline-transparent bg-[#3f3f3f] h-full w-full rounded-full gap-2 opacity-75 transition-all duration-300 hover:opacity-100 focus-within:outline-white">
         <div className="flex h-full p-3">
           <Magnifyer />
         </div>
@@ -47,16 +47,16 @@ export function SearchBar() {
             onBlur={handleFocus}
             onChange={handleFilterChange}
             type="text"
-            className="flex h-full text-xl w-90 appearance-none bg-transparent border-none outline-none focus:outline-none"
+            className="flex h-full w-full sm:text-xl max-w-90 appearance-none bg-transparent border-none outline-none focus:outline-none"
             placeholder="¿Qué quieres reproducir?"
           />
         </div>
-        <div className="relative flex h-full p-3">
+        <div className="static sm:relative flex h-full p-3">
           <div className="absolute border-l-1 h-3/6 self-center -mx-3"></div>
           <Explore />
         </div>
       </div>
-      <div onMouseDown={handleMouseDown}>
+      <div onMouseDown={handleMouseDown} className="absolute left-0 h-full w-full">
         <SearchBarResults
           visibility={classSearchBar}
           filteredSongs={filteredSongs}

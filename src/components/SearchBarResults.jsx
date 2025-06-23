@@ -2,7 +2,7 @@ import { SideMenuCard } from "./SideMenuCard";
 
 export function SearchBarResults({ visibility, filteredSongs }) {
   return (
-    <div className={`flex top-[100%] transition-opacity duration-200 mt-3 p-4 z-40 h-100 w-full rounded-2xl absolute bg-[#121212] overflow-hidden ${visibility}`}>
+    <div className={`flex transition-opacity duration-200 mt-3 p-4 z-40 h-100 w-full rounded-2xl absolute bg-[#121212] overflow-hidden ${visibility}`}>
       <div
         className="flex w-full scrollable"
       >
