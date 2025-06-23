@@ -8,11 +8,12 @@ import {
 
 import { useFetch } from "../hooks/useFetch";
 import { SideMenuCard } from "./SideMenuCard";
+import { LoadScreen } from "./LoadScreen";
 
 export function AsideMenu() {
   const {songs} = useFetch();
 
-  if (!songs) return <p>Cargando canciones...</p>;
+  if (!songs) return <LoadScreen />
 
   return (
     <div className="flex overflow-x-hidden sm:overflow-x-auto flex-col flex-1 bg-[#121212] rounded-lg p-4 gap-5">

@@ -1,11 +1,12 @@
 import { useFetch } from "../hooks/useFetch";
+import { LoadScreen } from "./LoadScreen";
 import { SongCard } from "./SongCard";
 import { motion } from "framer-motion";
 
 export function MainContent() {
   const { songs } = useFetch();
 
-  if (!songs) return <p>Cargando...</p>;
+  if (!songs) return <LoadScreen />
 
   // Agrupar canciones por artista
   // 1.- usamos el reduce para convertir la lista de songs en un nuevo objeto,

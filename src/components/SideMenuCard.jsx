@@ -2,7 +2,7 @@ import { Play, Pin } from "../icons/Library";
 import { useMusic } from "../context/MusicContext";
 import { useNavigate } from "react-router-dom";
 
-export function SideMenuCard({ song, cover, title, description, isPlayList }) {
+export function SideMenuCard({ song, cover, title, description, isPlayList, onSelect }) {
   const { currentSong } = useMusic();
 
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export function SideMenuCard({ song, cover, title, description, isPlayList }) {
   const classActualSong = currentSong?.id === song?.id ? "" : "hidden";
 
   const handleClick = () => {
-    /* playSong(song); */
+    onSelect() // <--- Cierra el recuadro de resultado de búsquedas
     navigate(`details/${song.id}`)
   };
 

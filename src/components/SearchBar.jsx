@@ -1,7 +1,4 @@
-import {
-  Explore,
-  Magnifyer
-} from "../icons/Library";
+import { Explore, Magnifyer } from "../icons/Library";
 import { SearchBarResults } from "./SearchBarResults";
 import { useFetch } from "../hooks/useFetch";
 import { useFilter } from "../context/FilterContext";
@@ -24,14 +21,15 @@ export function SearchBar() {
     });
   };
 
-  const handleFocus = () => {
-    setFocused(!focused);
-  };
-
   const handleMouseDown = (e) => {
     e.preventDefault(); // evita que el input pierda foco
     inputRef.current?.focus(); // asegura que el input tenga foco
   };
+
+  const handleClose = () => {
+  setFocused(false);
+  inputRef.current?.blur(); // opcional: también elimina el foco visual
+};
 
   const filteredSongs = filterSong(songsArray);
 
@@ -43,8 +41,9 @@ export function SearchBar() {
         </div>
         <div className="flex w-full h-full">
           <input
-            onFocus={handleFocus}
-            onBlur={handleFocus}
+            ref={inputRef}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
             onChange={handleFilterChange}
             type="text"
             className="flex h-full w-full sm:text-xl max-w-90 appearance-none bg-transparent border-none outline-none focus:outline-none"
@@ -56,10 +55,14 @@ export function SearchBar() {
           <Explore />
         </div>
       </div>
-      <div onMouseDown={handleMouseDown} className="absolute left-0 h-full w-full">
+      <div
+        onMouseDown={handleMouseDown}
+        className="absolute left-0 h-full w-full"
+      >
         <SearchBarResults
           visibility={classSearchBar}
           filteredSongs={filteredSongs}
+          onSelect={handleClose}
         />
       </div>
     </div>
