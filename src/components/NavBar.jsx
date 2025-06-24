@@ -7,6 +7,7 @@ import {
 } from "../icons/Library";
 import { useNavigate } from "react-router-dom";
 import { SearchBar } from "./SearchBar";
+import { SearchBarLayout } from "./SearchBarLayout";
 
 export function NavBar() {
   const navigate = useNavigate();
@@ -18,12 +19,7 @@ export function NavBar() {
   return (
     <div className="flex flex-1 h-full items-center px-4">
       <div className="flex flex-1 h-full items-center gap-3 relative sm:static sm:hidden">
-        <button onClick={handleHomeNavigate} className="bg-[#3f3f3f] h-full rounded-full cursor-pointer p-3 opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
-          <House></House>
-        </button>
-        <div className="flex h-full w-full">
-          <SearchBar></SearchBar>
-        </div>
+        <SearchBarLayout handleHomeNavigate={handleHomeNavigate}></SearchBarLayout>
       </div>
       <div className="hidden sm:flex w-full h-full justify-between items-center gap-4">
         <section className="flex flex-1 h-full justify-between items-center gap-10">
@@ -35,10 +31,7 @@ export function NavBar() {
           </button>
         </section>
         <section className="flex flex-1 justify-center items-center h-full gap-2">
-          <button onClick={handleHomeNavigate} className="bg-[#3f3f3f] h-full rounded-full cursor-pointer p-3 opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-105">
-            <House></House>
-          </button>
-          <SearchBar />
+          <SearchBarLayout handleHomeNavigate={handleHomeNavigate}></SearchBarLayout>
         </section>
         <section className="flex flex-1 h-full transition-all duration-200 justify-end gap-6 items-center">
           <button className="bg-white hidden lg:block text-black font-bold rounded-full px-4 h-2/3">

@@ -44,7 +44,7 @@ export function MusicDetails() {
 
   let classPaused;
 
-  if (isCurrentSong) {
+  if (currentSong?.id === detailSong.id) {
     classPaused = isPaused || !currentSong ? <Play /> : <Pause />;
   } else {
     classPaused = <Play />;
