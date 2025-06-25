@@ -1,11 +1,13 @@
 import { useMusic } from "../context/MusicContext";
 import { Heart, Pause, Play } from "../icons/Library";
 import { useFetch } from "../hooks/useFetch";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { ControlBar } from "./ControlBar";
+import {hexToRgba} from "../utils/colors"
 
 export function MusicIsland() {
   const [isExpanded, setIsExpanded] = useState(false)
+  const { artists } = useFetch();
 
   const {
     currentSong,
@@ -17,21 +19,31 @@ export function MusicIsland() {
     duration,
   } = useMusic();
 
-  const { artists } = useFetch();
+  const playPauseIcon = isPaused ? <Play /> : <Pause />;
 
-  if (!currentSong || !artists) return;
+  const classExpanded = isExpanded ? "musicIslandExpand" : ""
 
-  const currentArtist = Array.isArray(currentSong.artist)
+  const progress = useMemo(() => {
+    return (currentTime / duration) * 100
+  }, [currentTime, duration])
+
+  const {currentArtist, artistColor, rgbaColor} = useMemo(() => {
+    if (!currentSong || !artists) return { currentArtist: null, artistColor: null, rgbaColor:null }
+
+    const currentArtist = Array.isArray(currentSong.artist)
     ? currentSong.artist[0]
     : currentSong.artist;
 
-  const color = artists.find(
-    (artist) => artist.artist === currentArtist
-  )?.color;
+    const artistColor = artists.find(
+      (artist) => artist.artist === currentArtist
+    )?.color;
 
-  const className = isPaused ? <Play /> : <Pause />;
+    const rgbaColor = hexToRgba(artistColor, 0.3)
 
-  const classExpanded = isExpanded ? "musicIslandExpand" : ""
+    return {currentArtist, artistColor, rgbaColor}
+  }, [currentSong, artists])
+
+  if (!currentSong || !artists) return null
 
   const handlePlay = () => {
     setIsPaused(!isPaused);
@@ -42,24 +54,15 @@ export function MusicIsland() {
     }
   };
 
-  function hexToRgba(hex, opacity) {
-    const bigint = parseInt(hex.replace("#", ""), 16);
-    const r = (bigint >> 16) & 255;
-    const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
-
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-  }
-
-  const rgbaColor = hexToRgba(color, 0.3); // Por ejemplo 50% de opacidad
-
-  const progress = (currentTime / duration) * 100;
-
   // Evitar que el clic de los botones se propague al elemento padre
   const handleButtons = (e) => {
     e.stopPropagation(); // Evita que el click llegue al div padre
     handlePlay();
   };
+
+  const handleMouseDown = (e) => {
+    e.preventDefault()
+  }
 
   const handleClassExpanded = () => {
     setIsExpanded(!isExpanded)
@@ -67,7 +70,9 @@ export function MusicIsland() {
 
   return (
     <div
+      tabIndex={0}
       onClick={handleClassExpanded}
+      onBlur={() => setIsExpanded(false)}
       style={{ background: rgbaColor }}
       className={`absolute transition-all duration-150 bottom-4 left-1/2 -translate-x-1/2 w-full h-15 max-w-[95%] rounded-md sm:hidden flex flex-col gap-4 z-20 overflow-hidden ${classExpanded} backdrop-blur-lg`}
     >
@@ -89,11 +94,11 @@ export function MusicIsland() {
             </div>
           </section>
           <section className="flex items-center gap-3">
-            <button className="h-6">
+            <button aria-label="Marcar como favorito" onMouseDown={handleMouseDown} className="h-6">
               <Heart />
             </button>
-            <button className="h-6" onClick={handleButtons}>
-              {className}
+            <button aria-label={isPaused ? "Reproducir" : "Pausar"} onMouseDown={handleMouseDown} className="h-6" onClick={handleButtons}>
+              {playPauseIcon}
             </button>
           </section>
         </div>
@@ -119,7 +124,7 @@ export function MusicIsland() {
               <p className="font-semibold">{currentSong.artist}</p>
             </div>
           </div>
-          <div className="w-full">
+          <div onMouseDown={handleMouseDown} className="w-full">
             <ControlBar></ControlBar>
           </div>
         </div>
