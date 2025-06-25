@@ -1,13 +1,18 @@
 import { useMusic } from "../context/MusicContext";
 import { Heart, Pause, Play } from "../icons/Library";
 import { useFetch } from "../hooks/useFetch";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { ControlBar } from "./ControlBar";
 import { hexToRgba } from "../utils/colors";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function MusicIsland() {
   const [isExpanded, setIsExpanded] = useState(false);
   const { artists } = useFetch();
+
+  const [viewportHeight, setViewportHeight] = useState(() => window.innerHeight);
+
+  console.log(viewportHeight, window.innerHeight)
 
   const {
     currentSong,
@@ -22,6 +27,16 @@ export function MusicIsland() {
   const playPauseIcon = isPaused ? <Play /> : <Pause />;
 
   const classExpanded = isExpanded ? "musicIslandExpand" : "";
+
+  // Controlar la expansión de la isla
+  /* useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.style.maxHeight = isExpanded
+        ? contentRef.current.scrollHeight + "px"
+        : "0px";
+  }
+  }, [isExpanded]); */
+
 
   const progress = useMemo(() => {
     return (currentTime / duration) * 100;
@@ -71,11 +86,15 @@ export function MusicIsland() {
 
   return (
     <div className="absolute pointer-events-none h-full w-full">
-      <div
+      <motion.div
+        key={"musicIsland"}
+        initial={{ height: 84 }}
+        animate={{ height: isExpanded ? viewportHeight : "84px" }}
+        transition={{ duration: 0.1, ease: "linear" }}
         tabIndex={0}
         onClick={handleClassExpanded}
         onBlur={() => setIsExpanded(false)}
-        className={`absolute pointer-events-none transition-all duration-150 bottom-0 py-3 px-3 w-full h-20 sm:hidden flex flex-col gap-4 z-20 ${classExpanded}`}
+        className={`absolute pointer-events-none transition-all duration-150 bottom-0 py-3 px-3 w-full sm:hidden flex flex-col gap-4 z-20`}
       >
         <div
           style={{ background: rgbaColor }}
@@ -121,10 +140,12 @@ export function MusicIsland() {
               ></div>
             </div>
           </div>
-          <div className="flex flex-col justify-center h-full p-4 overflow-hidden">
-            <div className="flex flex-col gap-8">
+          
+          <div
+              className="transition-all duration-300 overflow-hidden">
+            <div className="flex flex-col p-4 gap-8">
               <div className="flex h-2/3 flex-col justify-end items-center gap-4">
-                <picture className="flex h-full bg-blue-500 aspect-square rounded-md overflow-hidden">
+                <picture className="flex h-full aspect-square rounded-md overflow-hidden">
                   <img
                     className="h-full w-full object-cover"
                     src={currentSong.cover}
@@ -146,8 +167,9 @@ export function MusicIsland() {
               </div>
             </div>
           </div>
+
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
