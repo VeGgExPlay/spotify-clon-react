@@ -1,18 +1,17 @@
 import { useMusic } from "../context/MusicContext";
 import { Heart, Pause, Play } from "../icons/Library";
 import { useFetch } from "../hooks/useFetch";
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { ControlBar } from "./ControlBar";
-import { hexToRgba } from "../utils/colors";
+import { hexToRgba } from "./utils/colors";
 import { motion, AnimatePresence } from "framer-motion";
+import { useViewportHeight } from "../hooks/useViewPortHeight";
 
 export function MusicIsland() {
   const [isExpanded, setIsExpanded] = useState(false);
   const { artists } = useFetch();
 
-  const [viewportHeight, setViewportHeight] = useState(() => window.innerHeight);
-
-  console.log(viewportHeight, window.innerHeight)
+  const viewportHeight = useViewportHeight()
 
   const {
     currentSong,
