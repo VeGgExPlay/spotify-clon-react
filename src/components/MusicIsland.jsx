@@ -109,10 +109,10 @@ export function MusicIsland() {
           ></div>
         </div>
       </div>
-      <div className="h-full p-4">
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-4">
-            <picture className="flex h-1/3 aspect-square rounded-md overflow-hidden">
+      <div className="h-full p-4 overflow-hidden">
+        <div className="flex h-full flex-col gap-8">
+          <div className="flex h-1/2 flex-col items-center gap-4">
+            <picture className="flex h-full bg-blue-500 aspect-square rounded-md overflow-hidden">
               <img
                 className="h-full w-full object-cover"
                 src={currentSong.cover}
@@ -124,8 +124,10 @@ export function MusicIsland() {
               <p className="font-semibold">{currentSong.artist}</p>
             </div>
           </div>
-          <div onMouseDown={handleMouseDown} className="w-full">
-            <ControlBar></ControlBar>
+          <div onMouseDown={handleMouseDown} className="flex flex-col h-1/2 w-full justify-center items-center">
+            <div className="w-full">
+              <ControlBar />
+            </div>
           </div>
         </div>
       </div>
