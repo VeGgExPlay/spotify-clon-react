@@ -46,7 +46,7 @@ export function SearchBar() {
             onBlur={() => setFocused(false)}
             onChange={handleFilterChange}
             type="text"
-            className="flex h-full w-full sm:text-xl max-w-90 appearance-none bg-transparent border-none outline-none focus:outline-none"
+            className="flex h-full w-full sm:text-xl appearance-none bg-transparent border-none outline-none focus:outline-none"
             placeholder="¿Qué quieres reproducir?"
           />
         </div>
