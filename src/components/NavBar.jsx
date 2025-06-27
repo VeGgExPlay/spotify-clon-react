@@ -22,7 +22,7 @@ export function NavBar() {
         <SearchBarLayout handleHomeNavigate={handleHomeNavigate}></SearchBarLayout>
       </div>
       <div className="hidden sm:flex w-full h-full justify-between items-center gap-4">
-        <section className="flex flex-1 h-full justify-between items-center gap-10">
+        <section className="flex flex-[0.5] xs:flex-[1] h-full justify-between items-center gap-10">
           <button
             onClick={handleHomeNavigate}
             className="h-3/4 cursor-pointer"
@@ -30,10 +30,10 @@ export function NavBar() {
             <Logo></Logo>
           </button>
         </section>
-        <section className="flex flex-1 justify-center items-center h-full gap-2">
+        <section className="flex flex-[2] justify-center items-center h-full gap-2">
           <SearchBarLayout handleHomeNavigate={handleHomeNavigate}></SearchBarLayout>
         </section>
-        <section className="flex flex-1 h-full transition-all duration-200 justify-end gap-6 items-center">
+        <section className="flex flex-[0.5] xs:flex-[1] h-full transition-all duration-200 justify-end gap-6 items-center">
           <button className="bg-white hidden lg:block text-black font-bold rounded-full px-4 h-2/3">
             <span>Descubrir Premium</span>
           </button>

@@ -5,15 +5,31 @@ export function useFetch(){
     const [artists, setArtists] = useState(undefined)
 
     useEffect(() => {
-        fetch('/api/data.json')
-        .then(res => res.json())
-        .then(data => setSongs(data))
+        const fetchSongs = async () => {
+            try{
+                const res = await fetch('/api/data.json')
+                const data = await res.json()
+                setSongs(data)
+            } catch (error){
+                console.error("Error fetching songs:", error)
+            }
+        }
+
+        fetchSongs()
     }, [])
 
     useEffect(() => {
-        fetch('/api/artists.json')
-        .then(res => res.json())
-        .then(data => setArtists(data))
+        const fetchArtists = async () => {
+            try{
+                const res = await fetch('/api/artists.json')
+                const data = await res.json()
+                setArtists(data)
+            } catch (error){
+                console.error("Error fetching artists:", error)
+            }
+        }
+
+        fetchArtists()
     }, [])
 
     return {songs, artists}

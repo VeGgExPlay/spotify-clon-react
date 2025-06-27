@@ -45,8 +45,18 @@ button{
 }
 
 @media (max-width: 900px) {
+  #asideLayout {
+    display: none;
+  }
+  #footerLayout {
+    display: none;
+  }
   #app {
-    grid-template-columns: minmax(60px, 180px) 1fr;
+    grid-template-areas:
+    "navbar navbar navbar"
+    "main main main"
+    "main main main";
+    grid-template-columns: 1fr;
   }
 }
 
